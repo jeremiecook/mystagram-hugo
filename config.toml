@@ -1,0 +1,10 @@
+baseURL = "https://photos.jeremiecook.com/"
+
+title = "/photos"
+DefaultContentLanguage = "fr"
+languageCode = "fr"
+theme = "mystagram"
+
+description = "Your personal description"
+keywords = ["keyword1", "keyword2"]
+
