@@ -1,0 +1,147 @@
+@import "mystagram/normalize";
+
+body {
+    font-family: "Source sans pro";
+}
+
+header {
+    background: #FFF;
+    margin: 0 0 2em;
+    line-height: 3.5em;
+    border-bottom: 1px solid #EDEDED;
+    border-top: 3px solid #4865D9;
+
+    .logo {
+        letter-spacing: .1em;
+        font-weight: 900;
+
+        a {
+        font-weight: bold;
+        color: #4865D9;
+        //text-transform: uppercase;
+        text-decoration: none;
+
+        }
+    }
+}
+
+body {
+    background: #fafafa;
+}
+
+figure, img {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+
+  @media (max-width: calc(960px + 2em))  {
+    margin: 0 1em;
+  }
+
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+
+  @media (max-width: calc(960px + 2em))  {
+    grid-gap: .5em;
+  }
+
+
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.gallery {
+
+    figure {
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+            figcaption {
+                transition: 1s ease all;
+                opacity: 1;
+            }
+
+
+            img {
+                transition: 6s linear all;
+                transform: scale(1.1);
+                //filter: blur(2px);
+            }
+        }
+    }
+
+    figcaption {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(24, 50, 125, .5);
+        transition: .8s ease all;
+        opacity: 0;
+
+        color: #FFF;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .informations {
+
+        }
+
+        .location {
+            font-weight: bold;
+            font-size: 1.1em;
+            letter-spacing: .1em;
+            line-height: 1.8;
+        }
+
+        .date {
+            letter-spacing: .1em;
+            font-size: .9em;
+        }
+    }
+
+    img {
+        width: 100%;
+        display: block;
+
+        transition: 1s ease all;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+.basicLightbox {
+    background : rgba(#000, .9) !important;
+}
+
+.lightbox {
+    background : #FFF;
+    display: flex;
+    //padding: 2em;
+    width: 60vw;
+    height: 70vh;
+
+    img {
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+    }
+}

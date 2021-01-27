@@ -1,0 +1,48 @@
+{{ define "main" }}
+
+<header>
+    <div class="container">
+        <div class="logo">/<a href="/">photos</a></div>
+    </div>
+</header>
+
+
+<div class="container">
+
+    <!-- Photos -->
+    <div class="gallery">
+    {{ range sort ($.Site.GetPage "/photos").Pages ".File.Dir" "desc" }}
+
+        {{ $resources := (.Resources.ByType "image") }}
+        {{ range (.Params.Photos) }}
+
+            {{ $photo := . }}
+            {{ with $resources.GetMatch (.src) }}
+            {{ $thumbnail := .Fill "640x640" }}
+
+            <a href="#">
+                <figure><img loading="lazy" src="{{ $thumbnail.RelPermalink }}" alt="">
+                    <figcaption>
+                        <div class="informations">
+                            <div class="location">{{ if isset $photo "location" }}{{ $photo.location }}{{ end }}</div>
+                            <div class="date">
+                            {{ if isset $photo "date" }}
+                                {{ index $.Site.Data.monthes  (printf "%s" (dateFormat "1" $photo.date)) }}
+                                {{ dateFormat "2006" $photo.date }}
+                            {{ end }}
+                            </div>
+                        </div>
+                        <div class="exif">
+                        </div>
+                    </figcaption>
+                </figure>
+            </a>
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    </div>
+
+</div>
+
+{{ end }}

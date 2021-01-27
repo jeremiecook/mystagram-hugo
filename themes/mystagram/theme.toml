@@ -1,0 +1,12 @@
+name = "Mystagram"
+license = "MIT"
+#licenselink = "https://github.com/EmielH/tale-hugo/blob/master/LICENSE"
+description = "A port of the Tale theme for Hugo. Tale is a minimal Jekyll theme curated for storytellers."
+#homepage = "https://github.com/EmielH/tale-hugo"
+#tags = ["minimal", "clean", "responsive", "simple", "personal", "blog", "starter", "light", "typography"]
+#features = ["pagination"]
+#min_version = "0.50"
+
+[author]
+  name = "Jérémie Cook"
+  homepage = "https://jeremiecook.com"

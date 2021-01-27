@@ -1,0 +1,68 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{- if eq .URL "/" }}
+        <meta name="description" content="{{ .Site.Params.Description }}">
+    {{- else if .Description }}
+        <meta name="description" content="{{ .Description }}">
+    {{- end }}
+
+
+    <title>
+        {{- if eq .URL "/" }}
+            {{ .Site.Title }}
+        {{- else }}
+            {{ .Title }}
+        {{- end }}
+    </title>
+
+
+
+    <!-- CSS -->
+    {{- $cssTarget      := "css/style.css" }}
+    {{- $cssOptions     := cond (.Site.IsServer) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }}
+    {{ $sass := resources.Get "scss/mystagram.scss" }}
+    {{ $style := $sass | resources.ToCSS $cssOptions}}
+
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+    <!-- Lightbox -->
+    <link rel="stylesheet" href="{{ "css/basicLightbox.min.css" | relURL }}">
+    <script type="text/javascript" src="{{ "js/basicLightbox.min.js" | relURL }}"></script>
+
+    <script type="text/javascript">
+        console.log("hey")
+
+        window.onload = function(event) {
+            const photos = document.querySelectorAll("a")
+
+            for (const photo of photos) {
+                photo.addEventListener('click', function(event) {
+                    const src = photo.querySelector("img").src
+                    const title = "hello"
+
+                    basicLightbox.create(
+                        '<figure class="lightbox">' +
+                            '<img width="900" height="900" src=' + src + '>' +
+                            '<figcaption>' + title + '</figcaption>' +
+                        '</figure>'
+                    ).show()
+
+                event.preventDefault()
+              })
+            }
+
+        };
+
+
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL}}images/apple-touch-icon.png">
+
+    <!-- RSS -->
+    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+</head>
+
