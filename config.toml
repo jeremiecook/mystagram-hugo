@@ -8,3 +8,5 @@ theme = "mystagram"
 description = "Your personal description"
 keywords = ["keyword1", "keyword2"]
 
+publishDir = "docs"
+
