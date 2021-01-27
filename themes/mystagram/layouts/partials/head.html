@@ -31,30 +31,22 @@
     <script type="text/javascript" src="{{ "js/basicLightbox.min.js" | relURL }}"></script>
 
     <script type="text/javascript">
-        console.log("hey")
-
         window.onload = function(event) {
             const photos = document.querySelectorAll("a")
 
             for (const photo of photos) {
                 photo.addEventListener('click', function(event) {
-                    const src = photo.querySelector("img").src
-                    const title = "hello"
 
-                    basicLightbox.create(
-                        '<figure class="lightbox">' +
-                            '<img width="900" height="900" src=' + src + '>' +
-                            '<figcaption>' + title + '</figcaption>' +
-                        '</figure>'
-                    ).show()
+                    const figure = photo.querySelector("figure").cloneNode(true);
+                    figure.querySelector("img").src = figure.querySelector("img").getAttribute('data-full')
+                    basicLightbox.create(figure.outerHTML).show()
+
 
                 event.preventDefault()
               })
             }
 
         };
-
-
     </script>
 
     <!-- Favicon -->

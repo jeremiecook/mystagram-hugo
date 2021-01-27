@@ -29,7 +29,7 @@ body {
     background: #fafafa;
 }
 
-figure, img {
+figure, img, ul {
     margin: 0;
     padding: 0;
 }
@@ -114,6 +114,10 @@ figure, img {
             letter-spacing: .1em;
             font-size: .9em;
         }
+
+        .exif {
+            display: none;
+        }
     }
 
     img {
@@ -128,20 +132,74 @@ figure, img {
 
 .basicLightbox {
     background : rgba(#000, .9) !important;
-}
 
-.lightbox {
-    background : #FFF;
-    display: flex;
-    //padding: 2em;
-    width: 60vw;
-    height: 70vh;
+    figure {
+        background : #FFF;
+        display: flex;
+        //padding: 2em;
+        //width: 70vw;
+        height: 70vh;
 
-    img {
-        object-fit: contain;
-        max-width: 100%;
-        max-height: 100%;
-        width: auto;
-        height: auto;
+        img {
+            object-fit: contain;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            flex-grow: 2;
+        }
+
+        figcaption {
+            padding: 2em;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+        .location {
+            font-size: 1.2em;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+        .date {
+            //text-transform: uppercase;
+
+            font-size: .9em;
+        }
+
+        .exif {
+            margin-top: 2em;
+            strong {
+                font-weight: 600;
+                display: inline-block;
+                width: 6em;
+            }
+
+            font-size: .8em;
+            line-height: 1.5;
+            //font-weight: bold;
+            //color: rgba(#4865D9, .8);
+
+            .model {
+                font-size: 1.1em;
+                font-weight: 600;
+
+            }
+
+            .lens {
+                margin-bottom: .4em;
+                font-style: italic;
+            }
+
+            li {
+                list-style: none;
+            }
+        }
     }
+
+
 }
+

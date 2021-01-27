@@ -18,10 +18,13 @@
 
             {{ $photo := . }}
             {{ with $resources.GetMatch (.src) }}
-            {{ $thumbnail := .Fill "640x640" }}
+            {{ $image := .}}
+
+            {{ $full := .Fit "1200x1200" }}
+            {{ $thumbnail := .Fill "640x640 Center" }}
 
             <a href="#">
-                <figure><img loading="lazy" src="{{ $thumbnail.RelPermalink }}" alt="">
+                <figure><img loading="lazy" src="{{ $thumbnail.RelPermalink }}" data-full="{{ $full.RelPermalink }}" alt="">
                     <figcaption>
                         <div class="informations">
                             <div class="location">{{ if isset $photo "location" }}{{ $photo.location }}{{ end }}</div>
@@ -33,6 +36,25 @@
                             </div>
                         </div>
                         <div class="exif">
+                            {{- with $image.Exif -}}
+
+                            <ul>
+                                {{- with .Tags -}}
+                                    <li class="model">{{- if isset . "Model" }}{{ if not (hasPrefix (lower .Model) (lower .Make)) }}{{ .Make }} {{ end }}{{ .Model }}
+                                        {{- else }}{{ if isset $image.Params "composite" }}{{ $image.Params.composite }}
+                                        {{- else }}Composite Photo{{ end }}{{ end }}</li>
+                                    {{- if isset . "LensModel" -}}
+                                    <li class="lens">{{- if not (hasPrefix (lower .LensModel) (lower .Make)) }}{{ .LensModel }}
+                                        {{- else }}{{ substr .LensModel (len .Make)}}{{ end }}</li>
+                                    {{- end }}
+                                    {{- with .FocalLength }}<li><strong>Focale</strong> {{ . }}mm</li>{{ end }}
+                                    {{- with .ExposureTime }}<li><strong>Vitesse</strong> {{ . }}s</li>{{ end }}
+                                    {{- with .FNumber }}<li><strong>Ouverture</strong> f/{{ . }}</li>{{ end }}
+                                    {{- with .ISOSpeedRatings }}<li><strong>ISO</strong> {{ . }}</li>{{ end }}
+                                {{- end -}}
+                            </ul>
+                            {{- end -}}
+
                         </div>
                     </figcaption>
                 </figure>
