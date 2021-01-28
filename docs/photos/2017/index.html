@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>
+            2017
+    </title>
+
+
+
+    
+    
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    
+    <link rel="stylesheet" href="/css/basicLightbox.min.css">
+    <script type="text/javascript" src="/js/basicLightbox.min.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function(event) {
+            const photos = document.querySelectorAll("a")
+
+            for (const photo of photos) {
+                photo.addEventListener('click', function(event) {
+
+                    const figure = photo.querySelector("figure").cloneNode(true);
+                    figure.querySelector("img").src = figure.querySelector("img").getAttribute('data-full')
+                    basicLightbox.create(figure.outerHTML).show()
+
+
+                event.preventDefault()
+              })
+            }
+
+        };
+    </script>
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://photos.jeremiecook.com/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://photos.jeremiecook.com/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://photos.jeremiecook.com/images/apple-touch-icon.png">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="/photos" />
+</head>
+
+
+    <body>
+        <header>
+    <div class="container">
+        <div class="logo">/<a href="/">photos</a></div>
+        <ul class="menu"><li><a href="/about">A propos</a></li></ul>
+    </div>
+</header>
+
+        
+
+<div class="container">
+    <div class="content">
+        <h1>2017</h1>
+        
+    </div>
+</div>
+
+    </body>
+    
+
+</html>

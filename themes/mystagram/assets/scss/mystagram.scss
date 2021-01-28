@@ -25,18 +25,15 @@ header {
         a {
         font-weight: bold;
         color: $color-primary;
-        //text-transform: uppercase;
         text-decoration: none;
         }
     }
 }
 
 footer {
-    //background: #FFF;
     margin: 2em 0 0;
     padding-bottom: 1em;
     line-height: 3.5em;
-    //border-top: 1px solid #EDEDED;
     text-align: center;
     font-size: .9em;
 }
@@ -55,6 +52,11 @@ figure, img, ul {
     padding: 0;
 }
 
+h1 {
+    color: $color-primary;
+    font-weight: 600;
+}
+
 .container {
     max-width: 960px;
     margin: 0 auto;
@@ -62,8 +64,16 @@ figure, img, ul {
   @media (max-width: calc(960px + 2em))  {
     margin: 0 1em;
   }
-
 }
+
+
+.content {
+    max-width: 30em;
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+
 
 .menu {
     li {
@@ -78,28 +88,29 @@ figure, img, ul {
         letter-spacing: .02em;
         transition: .5s ease all;
 
-
         &:hover {
             color: $color-primary;
         }
     }
 }
 
+
 .gallery {
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em;
-
-  @media (max-width: calc(960px + 2em))  {
-    grid-gap: .5em;
-  }
-
 
     a {
         display: block;
         width: 100%;
         height: 100%;
     }
+
+    @media (max-width: calc(960px + 2em))  {
+        grid-gap: .5em;
+    }
+
 }
 
 
@@ -128,7 +139,6 @@ figure, img, ul {
             img {
                 transition: 6s linear all;
                 transform: scale(1.1);
-                //filter: blur(2px);
             }
         }
     }
@@ -183,16 +193,8 @@ figure, img, ul {
     }
 }
 
-.content {
-    max-width: 30em;
-    font-size: 1.1em;
-    line-height: 1.4;
-}
 
-h1 {
-    color: $color-primary;
-    font-weight: 600;
-}
+
 
 .basicLightbox {
     background : rgba(#000, .9) !important;
@@ -203,7 +205,6 @@ h1 {
         //padding: 2em;
         //width: 70vw;
         height: 70vh;
-
 
         img {
             object-fit: contain;
@@ -222,6 +223,18 @@ h1 {
             justify-content: space-between;
 
         }
+
+
+        @media (max-width: 660px) {
+            flex-direction: column;
+            width: 70vw;
+            height: auto;
+
+            figcaption {
+                padding: 1em;
+            }
+        }
+
 
         .location {
             font-size: 1.2em;
