@@ -19,13 +19,11 @@ photos :
 
 - src: DSCF2839.jpg
   date: 2017-04-29
-  location: Praria - Cap Vert
+  location: Praia - Cap Vert
 
 - src: DSCF2944.jpg
   date: 2017-04-29
   location: Cidade Vehla, Cap-Vert
-
-
 
 - src: DSCF2905.jpg
   date: 2017-04-29
@@ -34,7 +32,6 @@ photos :
 - src: DSCF2932.jpg
   date: 2017-04-29
   location: Cidade Vehla, Cap-Vert
-
 
 - src: DSCF3067.jpg
   date: 2017-04-30
