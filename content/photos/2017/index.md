@@ -18,7 +18,7 @@ photos :
   location: Sal, Cap-Vert
 
 - src: DSCF2839.jpg
-  date: 2017-04-29
+  date: 2017-04-28
   location: Praia - Cap Vert
 
 - src: DSCF2944.jpg
@@ -36,6 +36,8 @@ photos :
 - src: DSCF3067.jpg
   date: 2017-04-30
   location: Rui Vaz, Cap-Vert
+
+
 
 - src: DSCF3209.jpg
   date: 2017-05-01

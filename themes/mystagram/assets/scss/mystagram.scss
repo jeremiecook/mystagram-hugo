@@ -113,7 +113,8 @@ figure, img, ul {
             content: "";
             display: block;
             padding-bottom: 100%;
-            background: #F2F2F2;
+            background: #F2F2F2 url('../images/loading.svg') no-repeat center;
+
         }
 
 
@@ -202,9 +203,6 @@ h1 {
         //padding: 2em;
         //width: 70vw;
         height: 70vh;
-        background: Red;
-
-
 
 
         img {

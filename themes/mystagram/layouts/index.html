@@ -7,7 +7,7 @@
     {{ range sort ($.Site.GetPage "/photos").Pages ".File.Dir" "desc" }}
 
         {{ $resources := (.Resources.ByType "image") }}
-        {{ range (.Params.Photos) }}
+        {{ range sort (.Params.Photos) "date" "desc" }}
 
             {{ $photo := . }}
             {{ with $resources.GetMatch (.src) }}
@@ -33,9 +33,7 @@
 
                             <ul>
                                 {{- with .Tags -}}
-                                    <li class="model">{{- if isset . "Model" }}{{ if not (hasPrefix (lower .Model) (lower .Make)) }}{{ .Make }} {{ end }}{{ .Model }}
-                                        {{- else }}{{ if isset $image.Params "composite" }}{{ $image.Params.composite }}
-                                        {{- else }}Composite Photo{{ end }}{{ end }}</li>
+                                    <li class="model">{{- if isset . "Model" }}{{ if not (hasPrefix (lower .Model) (lower .Make)) }}{{ .Make }} {{ end }}{{ .Model }}{{ end }}</li>
                                     {{- if isset . "LensModel" -}}
                                     <li class="lens">{{- if not (hasPrefix (lower .LensModel) (lower .Make)) }}{{ .LensModel }}
                                         {{- else }}{{ substr .LensModel (len .Make)}}{{ end }}</li>
