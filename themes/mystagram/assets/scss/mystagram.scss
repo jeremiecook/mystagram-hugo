@@ -1,4 +1,5 @@
 @import "mystagram/normalize";
+@import "mystagram/fonts";
 
 $color-primary: #4865D9;
 
@@ -268,8 +269,10 @@ h1 {
             }
 
             .lens {
+                font-family: "Lato";
                 margin-bottom: .4em;
                 font-style: italic;
+                font-weight: 400;
             }
 
             li {

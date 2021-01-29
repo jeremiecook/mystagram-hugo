@@ -26,7 +26,8 @@ Website is generated in `docs` folder to match github pages requirements.
 
 [] Responsive
 [] Permalinks for photos
-
+[] Font source
+[] Loader for lightbox
 
 ## Credits & resources
 
