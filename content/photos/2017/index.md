@@ -106,75 +106,74 @@ photos :
 
 - src: DSCF5360.jpg
   date: 2017-08-24
-  location: XXX, Vietnam
+  location: Hanoï, Vietnam
 
 - src: DSCF5422.jpg
   date: 2017-08-24
-  location: XXX, Vietnam
+  location: Hanoï, Vietnam
 
 - src: DSCF5450.jpg
   date: 2017-08-24
-  location: XXX, Vietnam
-
+  location: Hanoï, Vietnam
 
 - src: DSCF5437.jpg
   date: 2017-08-24
-  location: XXX, Vietnam
+  location: Hanoï, Vietnam
 
 - src: DSCF5584.jpg
   date: 2017-08-26
-  location: XXX, Vietnam
+  location: Halong Bay, Vietnam
 
 - src: DSCF5559.jpg
   date: 2017-08-26
-  location: XXX, Vietnam
-
-
+  location: Halong Bay, Vietnam
 
 - src: DSCF5736.jpg
   date: 2017-08-29
-  location: XXX, Vietnam
+  location: Hội An, Vietnam
 
 - src: DSCF5757.jpg
   date: 2017-08-29
-  location: XXX, Vietnam
+  location: Hội An, Vietnam
   
 - src: DSCF5769.jpg
   date: 2017-08-29
-  location: XXX, Vietnam
+  location: Hội An, Vietnam
 
 - src: DSCF5906.jpg
-  date: 2017-08-29
-  location: XXX, Vietnam
+  date: 2017-08-31
+  location: Cantho, Vietnam
+
 
 # Myanmar
 
 - src: DSCF6191.jpg
   date: 2017-10-07
-  location: XXX, Myanmar
+  location: Rangoon, Myanmar
+  title: Kandawgyi Lake
 
 - src: DSCF6394.jpg
   date: 2017-10-08
-  location: XXX, Myanmar
+  location: Mandalay, Myanmar
 
 - src: DSCF6579.jpg
   date: 2017-10-08
-  location: XXX, Myanmar
+  location: Mandalay, Myanmar
 
 - src: DSCF6717.jpg
   date: 2017-10-11
-  location: XXX, Myanmar
+  location: Bagan, Myanmar
 
 - src: DSCF6811.jpg
   date: 2017-10-11
-  location: XXX, Myanmar
+  location: Bagan, Myanmar
 
 - src: DSCF6852.jpg
   date: 2017-10-11
-  location: XXX, Myanmar
+  location: Bagan, Myanmar
 
 - src: DSCF7098.jpg
   date: 2017-10-13
-  location: XXX, Myanmar
+  location: Kalaw, Myanmar
 
 ---
